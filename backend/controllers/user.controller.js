@@ -167,7 +167,7 @@ export const update = async (req, res) => {
                         pdfData.Pages.forEach(page => {
                             page.Texts.forEach(textItem => {
                                 textItem.R.forEach(r => {
-                                    extractedText += decodeURIComponent(r.T) + ' '; 
+                                    extractedText += decodeURIComponent(r.T) + ' ';
                                 });
                             });
                         });
@@ -194,7 +194,7 @@ export const update = async (req, res) => {
             console.error('User not found');
             return res.status(404).json({ msg: "User not found", success: false });
         }
-        user.fullname = fullname || user.fullname;
+        user.fullname = fullname || user.fullname;   //fallback case
         user.email = email || user.email;
         user.phoneNumber = phoneNumber || user.phoneNumber;
         user.profile.location = location || user.profile.location;

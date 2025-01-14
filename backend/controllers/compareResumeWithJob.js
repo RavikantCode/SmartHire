@@ -5,13 +5,15 @@ const compareResumeWithJob = (resumeInfo, jobDescription) => {
   const cleanJobDescription = jobDescription.replace(/\s+/g, ' ').trim().toLowerCase();
 
  
-  const resumeWords = cleanResumeInfo.split(/[\s,]+/);
+  const resumeWords = cleanResumeInfo.split(/[\s,]+/)
+
   const jobWords = cleanJobDescription.split(/[\s,]+/);
 
 
   const resumeWordsSet = new Set(resumeWords);
   const jobWordsSet = new Set(jobWords);
-    const matchingKeywords = [...resumeWordsSet].filter(word => jobWordsSet.has(word));
+
+    const matchingKeywords = [...resumeWordsSet].filter(word => jobWordsSet.has(word)); 
 
   
   const matchScore = matchingKeywords.length;

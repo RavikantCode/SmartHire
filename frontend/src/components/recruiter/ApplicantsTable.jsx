@@ -21,7 +21,7 @@ const shortlisting = ["Accepted", "Rejected"];
 const ApplicantsTable = () => {
   const { applicants } = useSelector((store) => store.application);
   const [statuses, setStatuses] = useState({});
-  const [updatedApplicants, setUpdatedApplicants] = useState(new Set()); // Track updated applicants
+  const [updatedApplicants, setUpdatedApplicants] = useState(new Set()); 
 
   const autoUpdateStatus = async (status, id) => {
     try {
@@ -36,7 +36,7 @@ const ApplicantsTable = () => {
           ...prevStatuses,
           [id]: status,
         }));
-        setUpdatedApplicants((prevSet) => new Set(prevSet.add(id))); // Mark as updated
+        setUpdatedApplicants((prevSet) => new Set(prevSet.add(id))); 
       }
     } catch (e) {
       console.error(e);
@@ -53,7 +53,7 @@ const ApplicantsTable = () => {
         }
       });
     }
-  }, [applicants, updatedApplicants]); // Add updatedApplicants as a dependency
+  }, [applicants, updatedApplicants]); 
 
   const statusHandler = async (status, id) => {
     try {
@@ -69,7 +69,7 @@ const ApplicantsTable = () => {
           ...prevStatuses,
           [id]: status,
         }));
-        setUpdatedApplicants((prevSet) => new Set(prevSet.add(id))); // Mark as updated manually if using the handler
+        setUpdatedApplicants((prevSet) => new Set(prevSet.add(id))); 
       }
     } catch (e) {
       console.log(e);
@@ -123,7 +123,7 @@ const ApplicantsTable = () => {
                   </TableCell>
                   <TableCell className="text-center">{application.score}</TableCell>
                   <TableCell className="text-center">
-                    {/* Show horizontal dots only if score > 4 and status is pending */}
+                 
                     {currentStatus === "pending" && application.score > 4 ? (
                       <Popover>
                         <PopoverTrigger>

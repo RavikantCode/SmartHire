@@ -39,18 +39,6 @@ const userSchema= mongoose.Schema({
     savedJobs:[{type:mongoose.Schema.Types.ObjectId,ref:'Job'}],
     resetPasswordToken:{type:String},
     resetPasswordExpire:{type:String},
-    // scores: [{
-    //     userId: {
-    //         type: mongoose.Schema.Types.ObjectId,
-    //         ref: 'User',
-    //         required: true
-    //     },
-    //     score: {
-    //         type: Number,
-    //         required: true
-    //     }
-    // }]
-   
     
     
 },{timestamps:true});
